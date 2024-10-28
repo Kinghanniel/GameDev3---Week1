@@ -1,11 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {    
     //Default move value
     private float movementSpeed = 1f;
+
+    public EnemyData enemyData;
+
+    private void Start()
+    {
+        movementSpeed = enemyData.shipSpeed;
+    }
 
     private void FixedUpdate()
     {
