@@ -12,26 +12,35 @@ public class EnemySpawnerManager : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] EnemyData[] enemyData;
     [SerializeField] int wavesNumber;
-    private int currentWaveCount = 0
+    private int currentWaveCount = 0;
+
+    public void SpawnerLogic()
+    {
+        StartCoroutine(SpawnWave());
+    }
 
      IEnumerator SpawnWave()
     {
         for (int i = 0; i < numberOfEnemiesSpawned; i++)
 
         { 
-           int randomInteger = Random.Range(0, spawnPoints.Length);
-            Gam
+            int randomInteger = Random.Range(0, spawnPoints.Length);
+            GameObject spawnShip = Instantiate(enemyPrefab, spawnPoints[randomInteger]);
+            spawnedShip.GetComponent<EnemyVisual>().enemyData = enemyData[currentWaveCount];
+            spawnedShip.GetComponent<EnemyMovement>().enemyData = enemyData[currentWaveCount];
+            spawnedShip.GetComponent<EnemyLife>().enemyData = enemyData[currentWaveCount];
+            yield return new WaitForSeconds(delayBetweenSpawns); 
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+        currentWaveCount++;
+        if (currentWaveCount > enemyData.Length)
+        { 
+            currentWaveCount = 0;
+        }
+
+        yield return new WaitForSeconds(delayBetweenWaves); 
+        StartCoroutine(SpawnWave());
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
