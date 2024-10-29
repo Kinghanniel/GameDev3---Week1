@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnerManager : MonoBehaviour
@@ -25,7 +24,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
         { 
             int randomInteger = Random.Range(0, spawnPoints.Length);
-            GameObject spawnShip = Instantiate(enemyPrefab, spawnPoints[randomInteger]);
+            GameObject spawnedShip = Instantiate(enemyPrefab, spawnPoints[randomInteger]);
             spawnedShip.GetComponent<EnemyVisual>().enemyData = enemyData[currentWaveCount];
             spawnedShip.GetComponent<EnemyMovement>().enemyData = enemyData[currentWaveCount];
             spawnedShip.GetComponent<EnemyLife>().enemyData = enemyData[currentWaveCount];
