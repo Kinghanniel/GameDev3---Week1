@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class EnemyVisual : MonoBehaviour
@@ -11,11 +10,5 @@ public class EnemyVisual : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = enemyData.shipSprite;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
