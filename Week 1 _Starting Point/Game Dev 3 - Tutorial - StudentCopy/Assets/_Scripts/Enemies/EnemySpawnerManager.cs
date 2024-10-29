@@ -18,7 +18,7 @@ public class EnemySpawnerManager : MonoBehaviour
         StartCoroutine(SpawnWave());
     }
 
-     IEnumerator SpawnWave()
+     private IEnumerator SpawnWave()
     {
         for (int i = 0; i < numberOfEnemiesSpawned; i++)
 

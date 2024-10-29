@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830f0b95e4c03824c99a7f3f913094a8, type: 3}
   m_Name: RedEnemy
   m_EditorClassIdentifier: 
-  shipSprite: {fileID: 0}
-  shipSpeed: 0
-  shipHp: 0
+  shipSprite: {fileID: -232441154, guid: 0cdc11648b682ce44b238fd9d78bb1b5, type: 3}
+  shipSpeed: 1
+  shipHp: 5
